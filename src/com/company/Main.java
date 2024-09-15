@@ -10,11 +10,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Cat cat = new Cat();
+        Cat cat = new Cat("Eshka", 4);
         cat.voice();
 
-        com.company.lesson6.Cat cat1 = new com.company.lesson6.Cat();
-        cat1.voice();
 
 
         //lesson8
@@ -33,15 +31,26 @@ public class Main {
 
             dog.goToStick(14);
             dog.whereIsDog();
+            dog.voice();
         }
 
         // lesson 10 - Наследование
         Duck duck = new Duck();
         duck.voice();
         duck.takeOff();
+        duck.showSpeed();
         duck.isTheBirdFly();
         duck.landing();
         duck.isTheBirdFly();
+        duck.showSpeed();
+
+
+        // lesson 13 - массивы
+        Dog[] dogs = Dog.getArray();
+        for (Dog sobaka : dogs) {
+            System.out.println(sobaka);
+        }
+
 
     }
 }
