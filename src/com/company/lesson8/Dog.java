@@ -1,5 +1,8 @@
 package com.company.lesson8;
 import java.lang.annotation.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Dog extends Animal{
     public Dog(String name, int weight) {
@@ -14,6 +17,7 @@ public class Dog extends Animal{
     }
 
     public Dog() {
+        canFly = false;
     }
 
     /**
@@ -50,11 +54,13 @@ public class Dog extends Animal{
     }
 
 
-    public static Dog[] getArray(){
-        Dog[] dogs = new Dog[3];
-        dogs[0] = Dog.of("Sharik", 10);
-        dogs[1] = Dog.of("Bobik", 20);
-        dogs[2] = Dog.of("Tuzik", 5);
+    public static List<Dog> randomArray(){
+        List<Dog> dogs = new ArrayList<>();
+
+        int arraySize = new Random().nextInt(2,10);
+        for (int i = 0; i < arraySize; i++) {
+            dogs.add(Dog.isHomeless(new Random().nextInt(1,10)));
+        }
         return dogs;
     }
 
